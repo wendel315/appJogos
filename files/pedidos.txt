@@ -1,0 +1,7 @@
+P;Primeiro pedido do dia;true;João da Silva;12323434599;joao@email.com
+J;The Witcher 3;59.99;12345;PC;16;true;RPG
+J;FIFA 22;69.99;54321;PlayStation;12;true;Esporte
+P;Segundo pedido do dia;true;Marcelo Souza;12323434599;marcelo@email.com
+J;The Witcher 3 2;59.99;12345;PC;16;true;RPG
+J;FIFA 22 2;69.99;54321;PlayStation;12;true;Esporte
+
