@@ -17,6 +17,9 @@ public abstract class Produto {
     private float valor;
     private int codigo;
 
+    @ManyToMany(mappedBy = "produtos")
+    private List<Pedido> pedidos;
+
 
     @Override
     public String toString() {
@@ -58,4 +61,11 @@ public abstract class Produto {
         this.codigo = codigo;
     }
 
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
 }

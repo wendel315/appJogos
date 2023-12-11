@@ -49,7 +49,6 @@ public class PedidoLoader implements ApplicationRunner {
                     pedido.setSolicitante(new Solicitante(campos[3], campos[4], campos[5]));
                     pedido.setProdutos(new ArrayList<Produto>());
 
-                    pedidoService.incluir(pedido);
 
                     break;
 
@@ -73,6 +72,8 @@ public class PedidoLoader implements ApplicationRunner {
 
             linha = leitura.readLine();
         }
+
+        pedidoService.incluir(pedido);
 
         for(Pedido p : pedidoService.obterLista()) {
             System.out.println("[PEDIDO] " + p);
