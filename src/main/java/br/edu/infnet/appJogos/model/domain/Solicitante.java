@@ -1,26 +1,34 @@
 package br.edu.infnet.appJogos.model.domain;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
 public class Solicitante {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    private int id;
     private String nome;
     private String cpf;
     private String email;
-    private List<Pedido> pedidos;
-
 
     @Override
     public String toString() {
 
-        return String.format("nome (%s) - cpf (%s) - email (%s)",
-                nome, cpf, email
+        return String.format("id (%d) - nome (%s) - cpf (%s) - email (%s)",
+                id, nome, cpf, email
         );
     }
 
     public Solicitante() {
+    }
 
+    public Solicitante(Integer id) {
+        this.id = id;
     }
 
     public Solicitante(String nome, String cpf, String email) {
@@ -29,6 +37,13 @@ public class Solicitante {
         this.email = email;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -53,5 +68,4 @@ public class Solicitante {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

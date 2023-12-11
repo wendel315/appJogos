@@ -1,11 +1,16 @@
 package br.edu.infnet.appJogos.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Jogo extends Produto {
 
     private String plataforma;
     private int classificacaoIndicativa;
     private boolean online;
     private String genero;
+
 
     @Override
     public String toString() {

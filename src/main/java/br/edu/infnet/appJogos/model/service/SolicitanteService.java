@@ -1,26 +1,24 @@
 package br.edu.infnet.appJogos.model.service;
 
+import java.util.Collection;
+
 import br.edu.infnet.appJogos.model.domain.Solicitante;
+import br.edu.infnet.appJogos.model.repositories.SolicitanteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;;
-import java.util.Map;
 
 @Service
 public class SolicitanteService {
 
-    private Map<String, Solicitante> solicitantes = new HashMap<>();
+    @Autowired
+    private SolicitanteRepository solicitanteRepository;
 
-    public Solicitante obterSolicitantePorId(int id) {
-        return solicitantes.get(id);
-    }
-
-    public void incluirSolicitante(Solicitante solicitante) {
-        solicitantes.put(solicitante.getCpf(), solicitante);
+    public void incluirSolicitante(Solicitante solicitante){
+        solicitanteRepository.save(solicitante);
     }
 
     public Collection<Solicitante> obterListaSolicitantes(){
-        return solicitantes.values();
+        return (Collection<Solicitante>) solicitanteRepository.findAll();
     }
 }

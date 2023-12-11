@@ -1,22 +1,25 @@
 package br.edu.infnet.appJogos.model.service;
 
-import org.springframework.stereotype.Service;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import br.edu.infnet.appJogos.model.domain.Jogo;
+import br.edu.infnet.appJogos.model.repositories.JogoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
 
 @Service
 public class JogoService {
 
-    private Map<Integer, Jogo> mapa = new HashMap<>();
+    @Autowired
+    private JogoRepository jogoRepository;
 
-    public void incluir(Jogo jogo) {
-        mapa.put(jogo.getCodigo(), jogo);
+    public void incluir(Jogo jogo){
+        jogoRepository.save(jogo);
     }
 
-    public Collection<Jogo> obterLista() {
-        return mapa.values();
+    public Collection<Jogo> obterLista(){
+        return (Collection<Jogo>) jogoRepository.findAll();
     }
 }
