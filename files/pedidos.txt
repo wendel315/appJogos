@@ -1,0 +1,8 @@
+P;Primeiro pedido do dia;true;1
+J;1
+J;1
+J;1
+J;1
+J;1
+
+

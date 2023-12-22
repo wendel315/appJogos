@@ -1,0 +1,2 @@
+The Witcher 3;59;12345;PC;16;true;RPG
+FIFA 22;69;54321;PlayStation;12;true;Esporte
